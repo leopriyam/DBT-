@@ -1,4 +1,4 @@
-ansh_dbt_youtube:
+
   target: dev
   outputs:
     dev:
