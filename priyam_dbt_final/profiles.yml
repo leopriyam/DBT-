@@ -1,0 +1,20 @@
+ansh_dbt_youtube:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: dbt_tutorial_dev
+      schema: default
+      host: dbc-a749e477-8292.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/62dabd124f879007
+      token: "{{ env_var('DBT_DATABRICKS_TOKEN_DEV') }}"
+      threads: 1
+
+    prod:
+      type: databricks
+      catalog: dbt_tutorial_prod
+      schema: default
+      host: dbc-a749e477-8292.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/62dabd124f879007
+      token: "{{ env_var('DBT_DATABRICKS_TOKEN_PROD') }}"
+      threads: 4
